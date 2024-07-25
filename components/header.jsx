@@ -19,8 +19,8 @@ const Index = () => {
 
   return (
     <div className="  text-gray-50">
-      <header>
-      <div  className=" bg-[#1F1D14] py-4 px-[150px] w-full fixed  flex justify-between items-center">
+      <header className="">
+      <div  className="fixed bg-[#1F1D14] py-4 px-[150px] w-full   flex justify-between items-center">
       <div className="flex text-2xl gap-3">
       <Image src={Icon} alt="Header Icon"/>
         <div className="font-bold">
@@ -42,13 +42,13 @@ const Index = () => {
       </div>
       </div>
       </div>
-      <div className="mx-[150px] ">
-        <button className="mt-[115px] px-[40px] py-[15px] bg-black text-xl rounded-lg">
+      <div className="mx-[150px] pt-[100px]">
+        <button className="mt-[20px] px-[40px] py-[15px] bg-black text-xl rounded-lg">
           <LayersIcon />
           Каталог 
         </button>
         <input type="text" placeholder="Поиск" className="px-4 py-[17px] border bg-[#F2F2F2] ml-4 w-[480px] rounded-lg" />
-        <button className="text-black ml-[200px] mr-[13px] py-[13px] px-[13px] bg-[#F2F2F2]"><PersonOutlineIcon/></button>
+        <button className="text-black ml-[185px] mr-[13px] py-[13px] px-[13px] bg-[#F2F2F2]"><PersonOutlineIcon/></button>
         <button className="text-black py-[13px] px-[13px] ml-3 bg-[#F2F2F2]"><FavoriteBorderIcon/></button>
         <button className="text-black ml-[30px] py-[15px] text-[] px-[33px]  bg-[#F2F2F2]">
           <LocalGroceryStoreIcon/>
