@@ -19,7 +19,7 @@ const Index = () => {
   const links = [
     { title: "Продукты", path: "/product" },
     { title: "Контакты", path: "/контакты" },
-    { title: "Оплата и Доставка", path: "/оплата" },
+    { title: "Оплата и Доставка", path: "/pay" },
     { title: "Новости", path: "/новости" },
     { title: "О нас", path: "/about" },
   ];
@@ -29,8 +29,8 @@ const Index = () => {
   ];
 
   return (
-    <div className="  text-gray-50 fixed">
-      <header className="">
+    <div className="  text-gray-50 fixed ">
+      <header>
       <div  className="fixed bg-[#1F1D14] py-4 px-[150px] w-full   flex justify-between items-center">
       <div className="flex text-2xl w-20">
       <Image src={Icon} alt="Header Icon"/>
@@ -56,7 +56,7 @@ const Index = () => {
       </div>
       </div>
       </div>
-      <div className=" pt-[100px] bg-white px-[150px]">
+      <div className=" pt-[100px] bg-white px-[150px] ">
         <button className="mt-[20px] px-[40px] py-[15px] bg-black text-xl rounded-lg">
           <LayersIcon />
           Каталог 

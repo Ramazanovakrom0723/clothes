@@ -5,27 +5,23 @@ import Krasofka from "../public/krasofka.png"
 import Kiyim from "../public/kiyim.png"
 import Suv from "../public/suvKiyimi.png"
 import Lija from "../public/lija.png"
-import Red from "../public/krasofka_red.png"
-import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import Kach from "../public/kach.png"
-import Kiyimm from "../public/kiyim.png"
-import Ryukzak from "../public/ryukzak.png"
 import DateRangeIcon from '@mui/icons-material/DateRange';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import Run from "../public/yuguradigon.svg"
 import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
+import Carusel from '@/components/ui/carusel';
 
-import Card from "../components/card/index"
+import Card from "../components/ui/card/index"
 
 
 
 export default function Home() {
   return (
     <main className='bg-[#F2F2F2] mt-[120px]'>
-      <div className='px-[150px] bg-white pb-[80px]'>
+    <Carusel/>
+    <div className='px-[150px] bg-white pb-[80px]'>
         <h2 className='fira-sans text-[32px] font-medium pt-[102px]'>Катаолог</h2>
         <div className='flex gap-[30px] text-[20px] pt-[32px]'>
           <div className='flex flex-col gap-[60px] pl-[28px] pt-[25px] pr-[47px] pb-[36px] bg-[#D3E5F2] rounded-[10px]'>
@@ -49,12 +45,11 @@ export default function Home() {
           <Image src={Lija} alt='lija' className='w-[140px] h-[110px]'/>
           </div>
         </div>
-      </div>
-      {/* <Card/> */}
+    </div>
 
 
 
-      <div className=' px-[150px] flex flex-col pt-[70px] pb-[76px]'>
+    <div className=' px-[150px] flex flex-col pt-[70px] pb-[76px]'>
         <div className='flex justify-between'>
           <h2 className='text-[32px] font-medium pb-[42px]'>Акция</h2>
           <div>
@@ -63,65 +58,17 @@ export default function Home() {
           </div>
         </div>
        <div className='flex gap-[20px]'>
-       <div className='flex'>
-       <div className='pl-[25px] pt-[25px] pr-[17px] bg-white '>
-            <div className='flex justify-end'><button><FavoriteBorderIcon/></button></div>
-            <Image src={Red} alt='Red'/>
-            <p className='text-[20px]'>Бутса Nike Mercurial</p>
-            <p className='text-[20px]'>Superfly 8 FG</p>
-            <div className='py-[16px]'>
-            <b className='text-[20px] text-[#FF1313]'>500 000<span>uzs</span></b>
-            <p className='text-[#1F1D14] opacity-55 line-through'>750 000</p>
-            </div>
-            <button className='w-full py-[15px] bg-[#FBD029] text-[]'> <LocalGroceryStoreIcon/> Корзина</button>
-          </div>
-        </div>
-        <div className='flex'>
-        <div className='pl-[25px] pt-[25px] pr-[17px] bg-white '>
-            <div className='flex justify-end'><button><FavoriteBorderIcon/></button></div>
-            <Image src={Kach} alt='Kach' className='w-[242px] h-[194px]'/>
-            <p className='text-[20px]'>Бутса Nike Mercurial</p>
-            <p className='text-[20px]'>Superfly 8 FG</p>
-            <div className='py-[16px]'>
-            <b className='text-[20px] text-[#FF1313]'>500 000<span>uzs</span></b>
-            <p className='text-[#1F1D14] opacity-55 line-through'>750 000</p>
-            </div>
-            <button className='w-full py-[15px] bg-[#FBD029] text-[]'> <LocalGroceryStoreIcon/> Корзина</button>
-          </div>
-        </div>
-        <div className='flex'>
-        <div className='pl-[25px] pt-[25px] pr-[17px] bg-white '>
-            <div className='flex justify-end'><button><FavoriteBorderIcon/></button></div>
-            <Image src={Kiyimm} alt='Kiyimm' className='w-[242px] h-[194px]'/>
-            <p className='text-[20px]'>Бутса Nike Mercurial</p>
-            <p className='text-[20px]'>Superfly 8 FG</p>
-            <div className='py-[16px]'>
-            <b className='text-[20px] text-[#FF1313]'>500 000<span>uzs</span></b>
-            <p className='text-[#1F1D14] opacity-55 line-through'>750 000</p>
-            </div>
-            <button className='w-full py-[15px] bg-[#FBD029] text-[]'> <LocalGroceryStoreIcon/> Корзина</button>
-          </div>
-        </div>
-        <div className='flex'>
-          <div className='pl-[25px] pt-[25px] pr-[17px] bg-white '>
-            <div className='flex justify-end'><button><FavoriteBorderIcon/></button></div>
-            <Image src={Ryukzak} alt='Ryukzak'/>
-            <p className='text-[20px]'>Бутса Nike Mercurial</p>
-            <p className='text-[20px]'>Superfly 8 FG</p>
-            <div className='py-[16px]'>
-            <b className='text-[20px] text-[#FF1313]'>500 000<span>uzs</span></b>
-            <p className='text-[#1F1D14] opacity-55 line-through'>750 000</p>
-            </div>
-            <button className='w-full py-[15px] bg-[#FBD029] text-[]'> <LocalGroceryStoreIcon/> Корзина</button>
-          </div>
-        </div>
+        <Card/>
+        <Card/> 
+        <Card/>
+        <Card/>
        </div>
-      </div>
+    </div>
 
 
 
 
-      <div className=' px-[150px] flex flex-col pt-[70px] pb-[76px]'>
+    <div className=' px-[150px] flex flex-col pt-[70px] pb-[76px]'>
         <div className='flex justify-between'>
           <h2 className='text-[32px] font-medium pb-[42px]'>Новинки</h2>
           <div>
@@ -130,120 +77,17 @@ export default function Home() {
           </div>
         </div>
        <div className='flex gap-[20px]'>
-       <div className='flex'>
-       <div className='pl-[25px] pt-[25px] pr-[17px] bg-white '>
-            <div className='flex justify-end'><button><FavoriteBorderIcon/></button></div>
-            <Image src={Red} alt='Red'/>
-            <p className='text-[20px]'>Бутса Nike Mercurial</p>
-            <p className='text-[20px]'>Superfly 8 FG</p>
-            <div className='py-[16px]'>
-            <b className='text-[20px] '>500 000<span>uzs</span></b>
-            </div>
-            <button className='w-full py-[15px] bg-[#FBD029] text-[]'> <LocalGroceryStoreIcon/> Корзина</button>
-          </div>
-        </div>
-        <div className='flex'>
-        <div className='pl-[25px] pt-[25px] pr-[17px] bg-white '>
-            <div className='flex justify-end'><button><FavoriteBorderIcon/></button></div>
-            <Image src={Kach} alt='Kach' className='w-[242px] h-[194px]'/>
-            <p className='text-[20px]'>Бутса Nike Mercurial</p>
-            <p className='text-[20px]'>Superfly 8 FG</p>
-            <div className='py-[16px]'>
-            <b className='text-[20px] '>500 000<span>uzs</span></b>
-            </div>
-            <button className='w-full py-[15px] bg-[#FBD029] text-[]'> <LocalGroceryStoreIcon/> Корзина</button>
-          </div>
-        </div>
-        <div className='flex'>
-        <div className='pl-[25px] pt-[25px] pr-[17px] bg-white '>
-            <div className='flex justify-end'><button><FavoriteBorderIcon/></button></div>
-            <Image src={Kiyimm} alt='Kiyimm' className='w-[242px] h-[194px]'/>
-            <p className='text-[20px]'>Бутса Nike Mercurial</p>
-            <p className='text-[20px]'>Superfly 8 FG</p>
-            <div className='py-[16px]'>
-            <b className='text-[20px] '>500 000<span>uzs</span></b>
-            </div>
-            <button className='w-full py-[15px] bg-[#FBD029] text-[]'> <LocalGroceryStoreIcon/> Корзина</button>
-          </div>
-        </div>
-        <div className='flex'>
-          <div className='pl-[25px] pt-[25px] pr-[17px] bg-white '>
-            <div className='flex justify-end'><button><FavoriteBorderIcon/></button></div>
-            <Image src={Ryukzak} alt='Ryukzak'/>
-            <p className='text-[20px]'>Бутса Nike Mercurial</p>
-            <p className='text-[20px]'>Superfly 8 FG</p>
-            <div className='py-[16px]'>
-            <b className='text-[20px] '>500 000<span>uzs</span></b>
-            </div>
-            <button className='w-full py-[15px] bg-[#FBD029] text-[]'> <LocalGroceryStoreIcon/> Корзина</button>
-          </div>
-        </div>
+        <Card/>
+        <Card/> 
+        <Card/>
+        <Card/>
        </div>
-      </div>
+    </div>
 
 
-      <div className=' px-[150px] flex flex-col pt-[70px] pb-[76px]'>
-<div className='flex justify-between'>
-  <h2 className='text-[32px] font-medium pb-[42px]'>Новинки</h2>
-  <div>
-    <button className='w-[50px] h-[50px] rounded-[50%] bg-white text-3xl mr-[20px]'><KeyboardArrowLeftIcon/></button>
-    <button className='w-[50px] h-[50px] rounded-[50%] bg-white text-3xl'><ChevronRightIcon/></button>
-  </div>
-</div>
-<div className='flex gap-[20px]'>
-<div className='flex'>
-<div className='pl-[25px] pt-[25px] pr-[17px] bg-white '>
-    <div className='flex justify-end'><button><FavoriteBorderIcon/></button></div>
-    <Image src={Red} alt='Red'/>
-    <p className='text-[20px]'>Бутса Nike Mercurial</p>
-    <p className='text-[20px]'>Superfly 8 FG</p>
-    <div className='py-[16px]'>
-    <b className='text-[20px] '>250 000<span>uzs</span></b>
-    </div>
-    <button className='w-full py-[15px] bg-[#FBD029] text-[]'> <LocalGroceryStoreIcon/> Корзина</button>
-  </div>
-</div>
-<div className='flex'>
-<div className='pl-[25px] pt-[25px] pr-[17px] bg-white '>
-    <div className='flex justify-end'><button><FavoriteBorderIcon/></button></div>
-    <Image src={Kach} alt='Kach' className='w-[242px] h-[194px]'/>
-    <p className='text-[20px]'>Бутса Nike Mercurial</p>
-    <p className='text-[20px]'>Superfly 8 FG</p>
-    <div className='py-[16px]'>
-    <b className='text-[20px] '>250 000<span>uzs</span></b>
-    </div>
-    <button className='w-full py-[15px] bg-[#FBD029] text-[]'> <LocalGroceryStoreIcon/> Корзина</button>
-  </div>
-</div>
-<div className='flex'>
-<div className='pl-[25px] pt-[25px] pr-[17px] bg-white '>
-    <div className='flex justify-end'><button><FavoriteBorderIcon/></button></div>
-    <Image src={Kiyimm} alt='Kiyimm' className='w-[242px] h-[194px]'/>
-    <p className='text-[20px]'>Бутса Nike Mercurial</p>
-    <p className='text-[20px]'>Superfly 8 FG</p>
-    <div className='py-[16px]'>
-    <b className='text-[20px] '>250 000<span>uzs</span></b>
-    </div>
-    <button className='w-full py-[15px] bg-[#FBD029] text-[]'> <LocalGroceryStoreIcon/> Корзина</button>
-  </div>
-</div>
-<div className='flex'>
-  <div className='pl-[25px] pt-[25px] pr-[17px] bg-white '>
-    <div className='flex justify-end'><button><FavoriteBorderIcon/></button></div>
-    <Image src={Ryukzak} alt='Ryukzak'/>
-    <p className='text-[20px]'>Бутса Nike Mercurial</p>
-    <p className='text-[20px]'>Superfly 8 FG</p>
-    <div className='py-[16px]'>
-    <b className='text-[20px] '>250 000<span>uzs</span></b>
-    </div>
-    <button className='w-full py-[15px] bg-[#FBD029] text-[]'> <LocalGroceryStoreIcon/> Корзина</button>
-  </div>
-</div>
-</div>
-</div>
 
 
-<div className=' px-[150px] flex flex-col pt-[70px] pb-[76px]'>
+    <div className=' px-[150px] flex flex-col pt-[70px] pb-[76px]'>
 <div className='flex justify-between'>
   <h2 className='text-[32px] font-medium pb-[42px]'>Продукты</h2>
   <div>
@@ -252,61 +96,20 @@ export default function Home() {
   </div>
 </div>
 <div className='flex gap-[20px]'>
-<div className='flex'>
-<div className='pl-[25px] pt-[25px] pr-[17px] bg-white '>
-    <div className='flex justify-end'><button><FavoriteBorderIcon/></button></div>
-    <Image src={Red} alt='Red'/>
-    <p className='text-[20px]'>Бутса Nike Mercurial</p>
-    <p className='text-[20px]'>Superfly 8 FG</p>
-    <div className='py-[16px]'>
-    <b className='text-[20px] '>500 000<span>uzs</span></b>
+
+<Card/>
+        <Card/> 
+        <Card/>
+        <Card/>
+
+
+</div>
     </div>
-    <button className='w-full py-[15px] bg-[#FBD029] text-[]'> <LocalGroceryStoreIcon/> Корзина</button>
-  </div>
-</div>
-<div className='flex'>
-<div className='pl-[25px] pt-[25px] pr-[17px] bg-white '>
-    <div className='flex justify-end'><button><FavoriteBorderIcon/></button></div>
-    <Image src={Kach} alt='Kach' className='w-[242px] h-[194px]'/>
-    <p className='text-[20px]'>Бутса Nike Mercurial</p>
-    <p className='text-[20px]'>Superfly 8 FG</p>
-    <div className='py-[16px]'>
-    <b className='text-[20px] '>500 000<span>uzs</span></b>
-    </div>
-    <button className='w-full py-[15px] bg-[#FBD029] text-[]'> <LocalGroceryStoreIcon/> Корзина</button>
-  </div>
-</div>
-<div className='flex'>
-<div className='pl-[25px] pt-[25px] pr-[17px] bg-white '>
-    <div className='flex justify-end'><button><FavoriteBorderIcon/></button></div>
-    <Image src={Kiyimm} alt='Kiyimm' className='w-[242px] h-[194px]'/>
-    <p className='text-[20px]'>Бутса Nike Mercurial</p>
-    <p className='text-[20px]'>Superfly 8 FG</p>
-    <div className='py-[16px]'>
-    <b className='text-[20px] '>500 000<span>uzs</span></b>
-    </div>
-    <button className='w-full py-[15px] bg-[#FBD029] text-[]'> <LocalGroceryStoreIcon/> Корзина</button>
-  </div>
-</div>
-<div className='flex'>
-  <div className='pl-[25px] pt-[25px] pr-[17px] bg-white '>
-    <div className='flex justify-end'><button><FavoriteBorderIcon/></button></div>
-    <Image src={Ryukzak} alt='Ryukzak'/>
-    <p className='text-[20px]'>Бутса Nike Mercurial</p>
-    <p className='text-[20px]'>Superfly 8 FG</p>
-    <div className='py-[16px]'>
-    <b className='text-[20px] '>500 000<span>uzs</span></b>
-    </div>
-    <button className='w-full py-[15px] bg-[#FBD029] text-[]'> <LocalGroceryStoreIcon/> Корзина</button>
-  </div>
-</div>
-</div>
-</div>
 
 
 
 
-<div className=' px-[150px] flex flex-col pt-[70px] pb-[76px]'>
+    <div className=' px-[150px] flex flex-col pt-[70px] pb-[76px]'>
 <div className='flex justify-between'>
   <h2 className='text-[32px] font-medium pb-[42px]'>ТОП продажа</h2>
   <div>
@@ -315,63 +118,22 @@ export default function Home() {
   </div>
 </div>
 <div className='flex gap-[20px]'>
-<div className='flex'>
-<div className='pl-[25px] pt-[25px] pr-[17px] bg-white '>
-    <div className='flex justify-end'><button><FavoriteBorderIcon/></button></div>
-    <Image src={Red} alt='Red'/>
-    <p className='text-[20px]'>Бутса Nike Mercurial</p>
-    <p className='text-[20px]'>Superfly 8 FG</p>
-    <div className='py-[16px]'>
-    <b className='text-[20px] '>500 000<span>uzs</span></b>
+
+<Card/>
+        <Card/> 
+        <Card/>
+        <Card/>
+
+
+</div>
     </div>
-    <button className='w-full py-[15px] bg-[#FBD029] text-[]'> <LocalGroceryStoreIcon/> Корзина</button>
-  </div>
-</div>
-<div className='flex'>
-<div className='pl-[25px] pt-[25px] pr-[17px] bg-white '>
-    <div className='flex justify-end'><button><FavoriteBorderIcon/></button></div>
-    <Image src={Kach} alt='Kach' className='w-[242px] h-[194px]'/>
-    <p className='text-[20px]'>Бутса Nike Mercurial</p>
-    <p className='text-[20px]'>Superfly 8 FG</p>
-    <div className='py-[16px]'>
-    <b className='text-[20px] '>500 000<span>uzs</span></b>
-    </div>
-    <button className='w-full py-[15px] bg-[#FBD029] text-[]'> <LocalGroceryStoreIcon/> Корзина</button>
-  </div>
-</div>
-<div className='flex'>
-<div className='pl-[25px] pt-[25px] pr-[17px] bg-white '>
-    <div className='flex justify-end'><button><FavoriteBorderIcon/></button></div>
-    <Image src={Kiyimm} alt='Kiyimm' className='w-[242px] h-[194px]'/>
-    <p className='text-[20px]'>Бутса Nike Mercurial</p>
-    <p className='text-[20px]'>Superfly 8 FG</p>
-    <div className='py-[16px]'>
-    <b className='text-[20px] '>500 000<span>uzs</span></b>
-    </div>
-    <button className='w-full py-[15px] bg-[#FBD029] text-[]'> <LocalGroceryStoreIcon/> Корзина</button>
-  </div>
-</div>
-<div className='flex'>
-  <div className='pl-[25px] pt-[25px] pr-[17px] bg-white '>
-    <div className='flex justify-end'><button><FavoriteBorderIcon/></button></div>
-    <Image src={Ryukzak} alt='Ryukzak'/>
-    <p className='text-[20px]'>Бутса Nike Mercurial</p>
-    <p className='text-[20px]'>Superfly 8 FG</p>
-    <div className='py-[16px]'>
-    <b className='text-[20px] '>500 000<span>uzs</span></b>
-    </div>
-    <button className='w-full py-[15px] bg-[#FBD029] text-[]'> <LocalGroceryStoreIcon/> Корзина</button>
-  </div>
-</div>
-</div>
-</div>
 
 
 
 
 
 
-<div className='px-[150px] '>
+    <div className='px-[150px] '>
 <h2 className='pb-[31px] text-[32px] font-bold'>Полезное</h2>
 <div className='flex gap-6'>
 <div className='w-[603px] h-[417px] bg-white flex flex-col justify-around pt-[38px] pl-[35px] pr-[110px] pb-[ 45px]'>
@@ -393,11 +155,11 @@ export default function Home() {
   </button>
 </div>
 </div>
-</div>
+    </div>
 
 
 
-<div className='px-[150px] pt-[80px]'>
+   <div className='px-[150px] pt-[80px]'>
 <h2>Примущества</h2>
 <div className='flex gap-6'>
 <div className='pl-[40px] pt-[64px] pr-[70px] pb-[99px] w-[292px] h-[289px] bg-white flex flex-col gap-10'>
@@ -417,7 +179,7 @@ export default function Home() {
   <p>Широкий ассортимент товаров</p>
 </div>
 </div>
-</div>
+   </div>
 
 
 

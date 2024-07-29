@@ -4,22 +4,7 @@ import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import HomeIcon from '@mui/icons-material/Home';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import Red from "../../public/krasofka_red.png"
-import Kach from "../../public/kach.png"
-import Kiyimm from "../../public/kiyim.png"
-import Ryukzak from "../../public/ryukzak.png"
-import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
-import Home from "../../components/header"
-
-import Image from 'next/image';
-
-
-
-
-
-
-
+import Card from "../../components/ui/card/index"
 import "./about.css"
 import Link from 'next/link';
 
@@ -43,7 +28,6 @@ const Index = () => {
         ))}
         <ChevronRightIcon/>
         <p>Полезные информации</p>
-
       </div>
       <div className='px-[150px] '>
         <h2 className='pb-[31px] text-[32px] font-bold'>Полезные информации</h2>
@@ -154,60 +138,12 @@ const Index = () => {
           </div>
         </div>
        <div className='flex gap-[20px]'>
-       <div className='flex'>
-       <div className='pl-[25px] pt-[25px] pr-[17px] bg-white '>
-            <div className='flex justify-end'><button><FavoriteBorderIcon/></button></div>
-            <Image src={Red} alt='Red'/>
-            <p className='text-[20px]'>Бутса Nike Mercurial</p>
-            <p className='text-[20px]'>Superfly 8 FG</p>
-            <div className='py-[16px]'>
-            <b className='text-[20px] text-[#FF1313]'>500 000<span>uzs</span></b>
-            <p className='text-[#1F1D14] opacity-55 line-through'>750 000</p>
-            </div>
-            <button className='w-full py-[15px] bg-[#FBD029] text-[]'> <LocalGroceryStoreIcon/> Корзина</button>
-          </div>
-        </div>
-        <div className='flex'>
-        <div className='pl-[25px] pt-[25px] pr-[17px] bg-white '>
-            <div className='flex justify-end'><button><FavoriteBorderIcon/></button></div>
-            <Image src={Kach} alt='Kach' className='w-[242px] h-[194px]'/>
-            <p className='text-[20px]'>Бутса Nike Mercurial</p>
-            <p className='text-[20px]'>Superfly 8 FG</p>
-            <div className='py-[16px]'>
-            <b className='text-[20px] text-[#FF1313]'>500 000<span>uzs</span></b>
-            <p className='text-[#1F1D14] opacity-55 line-through'>750 000</p>
-            </div>
-            <button className='w-full py-[15px] bg-[#FBD029] text-[]'> <LocalGroceryStoreIcon/> Корзина</button>
-          </div>
-        </div>
-        <div className='flex'>
-        <div className='pl-[25px] pt-[25px] pr-[17px] bg-white '>
-            <div className='flex justify-end'><button><FavoriteBorderIcon/></button></div>
-            <Image src={Kiyimm} alt='Kiyimm' className='w-[242px] h-[194px]'/>
-            <p className='text-[20px]'>Бутса Nike Mercurial</p>
-            <p className='text-[20px]'>Superfly 8 FG</p>
-            <div className='py-[16px]'>
-            <b className='text-[20px] text-[#FF1313]'>500 000<span>uzs</span></b>
-            <p className='text-[#1F1D14] opacity-55 line-through'>750 000</p>
-            </div>
-            <button className='w-full py-[15px] bg-[#FBD029] text-[]'> <LocalGroceryStoreIcon/> Корзина</button>
-          </div>
-        </div>
-        <div className='flex'>
-          <div className='pl-[25px] pt-[25px] pr-[17px] bg-white '>
-            <div className='flex justify-end'><button><FavoriteBorderIcon/></button></div>
-            <Image src={Ryukzak} alt='Ryukzak'/>
-            <p className='text-[20px]'>Бутса Nike Mercurial</p>
-            <p className='text-[20px]'>Superfly 8 FG</p>
-            <div className='py-[16px]'>
-            <b className='text-[20px] text-[#FF1313]'>500 000<span>uzs</span></b>
-            <p className='text-[#1F1D14] opacity-55 line-through'>750 000</p>
-            </div>
-            <button className='w-full py-[15px] bg-[#FBD029] text-[]'> <LocalGroceryStoreIcon/> Корзина</button>
-          </div>
-        </div>
+        <Card/>
+        <Card/> 
+        <Card/>
+        <Card/>
        </div>
-      </div>
+    </div>
    </div>
   )
 }
