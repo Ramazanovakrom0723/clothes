@@ -8,7 +8,7 @@ import Image from 'next/image';
 const Index = () => {
   return (
     <div className='flex'>
-      <div className='pl-[25px] pt-[25px] pr-[17px] bg-white '>
+      <div className='pl-[20px] pt-[25px] pr-[15px] bg-white '>
         <div className='flex justify-end'><button><FavoriteBorderIcon/></button></div>
           <Image src={Kachs} alt='Kach' className='w-[242px] h-[194px]'/>
           <p className='text-[20px]'>Бутса Nike Mercurial</p>

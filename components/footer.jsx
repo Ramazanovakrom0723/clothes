@@ -7,7 +7,7 @@ function Footer() {
       <div className="w-full h-[24px] bg-[#FBD029]"></div>
       <div className="w-full pt-[73px] pb-[44px] bg-[#1F1D14] border-b border-[rgba(242,242,242,0.3)]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-start justify-between gap-10">
+          <div className="flex flex-wrap items-start justify-center lg:justify-between gap-10">
             <Image src={logo} alt="logo" width={189} height={59} />
             <div className="flex flex-col gap-5">
               <p className="text-[18px] font-bold text-white">Контакты</p>
