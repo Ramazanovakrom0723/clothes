@@ -14,8 +14,13 @@ const Index = () => {
     { title: "Продукты", path: "/product" },
     { title: "Контакты", path: "/контакты" },
     { title: "Оплата и Доставка", path: "/pay" },
-    { title: "Новости", path: "/новости" },
+    { title: "Новости", path: "/news" },
     { title: "О нас", path: "/about" },
+  ];
+
+  const korzinka = [
+    { title: "Продукты", path: "/korzinka" },
+    
   ];
 
   const Home = [
@@ -23,7 +28,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="  text-gray-50 fixed ">
+    <div className="z-30  text-gray-50 fixed ">
       <header>
       <div  className="fixed bg-[#1F1D14] py-4 px-[150px] w-full   flex justify-between items-center">
       <div className="flex text-2xl w-20">
@@ -50,7 +55,7 @@ const Index = () => {
       </div>
       </div>
       </div>
-      <div className=" pt-[100px] bg-white px-[150px] ">
+      <div className=" pt-[100px] pb-[20px] bg-white px-[150px] ">
         <button className="mt-[20px] px-[40px] py-[15px] bg-black text-xl rounded-lg">
           <LayersIcon />
           Каталог 
@@ -59,8 +64,12 @@ const Index = () => {
         <button className="text-black ml-[185px] mr-[13px] py-[13px] px-[13px] bg-[#F2F2F2]"><PersonOutlineIcon/></button>
         <button className="text-black py-[13px] px-[13px] ml-3 bg-[#F2F2F2]"><FavoriteBorderIcon/></button>
         <button className="text-black ml-[30px] py-[15px] text-[] px-[33px]  bg-[#F2F2F2]">
+        {korzinka.map((item, index) => (
+        <Link href={item.path} key={index}>
           <LocalGroceryStoreIcon/>
-          Корзина
+          {item.title}
+        </Link>
+        ))}
         </button>
       </div>
     </header>

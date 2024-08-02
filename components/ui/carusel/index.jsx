@@ -61,7 +61,7 @@ const Carusel = () => {
                       width={438}
                       height={438}
                       alt="Carusel img"
-                      className="z-100"
+                      className=""
                     />
                   </div>
                 </div>

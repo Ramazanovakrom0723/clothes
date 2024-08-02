@@ -1,34 +1,3 @@
-// import React from 'react'
-// import Link from 'next/link';
-// import Card from "../../components/ui/card/index"
-// import HomeIcon from '@mui/icons-material/Home';
-// import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-
-
-// const links = [
-//   { title: "Главная", path: "/" },
-// ];
-// const Index = () => {
-//   return (
-//     <div className='py-[200px] px-[150px] bg-[#F2F2F2]'>
-//       <div className='flex gap-3  pb-[24px] opacity-70 pt-[20px]'>
-//         <HomeIcon/> 
-//         {links.map((item, index) => (
-//         <Link href={item.path} key={index}>
-//           {item.title}
-//         </Link>
-//         ))}
-//         <ChevronRightIcon/>
-//         <p>Продукты</p>
-//       </div>
-//     </div>
-//   )
-// }
-
-// export default Index
-
-
-
 'use client'
 
 
@@ -167,7 +136,7 @@ const Index = () => {
           {[...Array(15).keys()].map(index => (
             <Card key={index}/>
           ))}
-          <button className='mt-8 py-4 bg-white px-8 mx-auto block'>Показать ещё</button>
+          <button className='mt-8 py-2 bg-white px-8 mx-auto block'>Показать ещё</button>
         </div>
       </div>
     </div>
@@ -175,10 +144,9 @@ const Index = () => {
     <div className='mt-8'>
       <h2 className='text-2xl md:text-3xl font-bold'>Реконмендуемые продукты</h2>
       <div className='flex flex-wrap gap-5 mt-8'>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
+      {[...Array(4).keys()].map(index => (
+            <Card key={index}/>
+          ))}
       </div>
     </div>
   </div>
