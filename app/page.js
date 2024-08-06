@@ -58,9 +58,6 @@ export default function Home() {
         </div>
         <div className="flex flex-wrap justify-center gap-6 pt-8">
           <Card />
-          <Card />
-          <Card />
-          <Card />
         </div>
       </section>
 
@@ -77,9 +74,6 @@ export default function Home() {
           </div>
         </div>
         <div className="flex flex-wrap justify-center gap-6 pt-8">
-          <Card />
-          <Card />
-          <Card />
           <Card />
         </div>
       </section>
@@ -98,9 +92,6 @@ export default function Home() {
         </div>
         <div className="flex flex-wrap justify-center gap-6 pt-8">
           <Card />
-          <Card />
-          <Card />
-          <Card />
         </div>
       </section>
 
@@ -117,9 +108,6 @@ export default function Home() {
           </div>
         </div>
         <div className="flex flex-wrap justify-center gap-6 pt-8">
-          <Card />
-          <Card />
-          <Card />
           <Card />
         </div>
       </section>

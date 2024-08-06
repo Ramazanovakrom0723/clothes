@@ -1,5 +1,6 @@
 'use client';
 
+
 import Link from "next/link";
 import Image from 'next/image';
 import { useState } from 'react';
@@ -7,7 +8,6 @@ import Icon from "../public/icon.svg";
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import EmailIcon from '@mui/icons-material/Email';
 import LayersIcon from '@mui/icons-material/Layers';
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import KeepMountedModal from "./modal/page";
@@ -72,9 +72,6 @@ const Index = () => {
           </button>
           <input type="text" placeholder="Поиск" className="px-4 border bg-[#F2F2F2] ml-4 w-[480px] rounded-lg" />
           <div className="flex ml-auto items-center gap-3">
-            <button className="text-black py-[13px] px-[13px] bg-[#F2F2F2]" onClick={() => setOpen(true)}>
-              <PersonOutlineIcon />
-            </button>
             <KeepMountedModal open={open} handleClose={() => setOpen(false)} />
             <button className="text-black py-[13px] px-[13px] bg-[#F2F2F2]">
               <FavoriteBorderIcon />

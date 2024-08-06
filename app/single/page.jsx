@@ -15,7 +15,7 @@ const Index = () => {
   const imgList = [productImage, productImage, productImage, productImage];
 
   return (
-    <div className="p-4 pt-[200px] md:px-[150px] bg-gray-100">
+    <div className="p-4 pt-[200px] md:px-[140px] bg-gray-100">
       <div className="flex container flex-col md:flex-row gap-8  p-6 rounded-lg ">
         <div className="md:w-1/2">
           <Swiper
@@ -137,10 +137,8 @@ const Index = () => {
       </div>
       <div className='mt-[81px] mb-[160px]'>
       <h2 className='text-2xl md:text-3xl font-bold'>Похожие продукты</h2>
-      <div className='flex flex-wrap gap-5 mt-8'>
-      {[...Array(4).keys()].map(index => (
-            <Card key={index}/>
-          ))}
+      <div className='flex   mt-8'>
+      <Card/>
       </div>
     </div>
     </div>
@@ -148,3 +146,7 @@ const Index = () => {
 };
 
 export default Index;
+
+
+
+

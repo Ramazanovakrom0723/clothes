@@ -13,32 +13,7 @@ import Card from "../../components/ui/card/index"
 
 
 
-const products = [
-    {
-      id: 1,
-      name: 'Бутса Nike Mercurial Superfly 8 FG',
-      image: 'https://via.placeholder.com/200',
-      price: 250000,
-      oldPrice: 300000,
-      isOnSale: false
-    },
-    {
-      id: 2,
-      name: 'Бутса Nike Mercurial Superfly 8 FG',
-      image: 'https://via.placeholder.com/200',
-      price: 500000,
-      oldPrice: 750000,
-      isOnSale: true
-    },
-    {
-      id: 3,
-      name: 'Бутса Nike Mercurial Superfly 8 FG',
-      image: 'https://via.placeholder.com/200',
-      price: 250000,
-      oldPrice: 300000,
-      isOnSale: false
-    }
-  ];
+
 const links = [
   { title: "Главная", path: "/" },
 ];
@@ -51,7 +26,7 @@ const Index = () => {
 
 
   return (
-    <div className='py-8 md:py-[200px] px-4 md:px-[150px] bg-[#F2F2F2]'>
+    <div className='py-8 md:py-[200px] px-4 md:px-[130px] bg-[#F2F2F2]'>
     <div className='flex flex-wrap gap-3 pb-[24px] opacity-70 pt-[20px]'>
       <HomeIcon/>
       {links.map((item, index) => (
@@ -133,9 +108,8 @@ const Index = () => {
           </button>
         </div>
         <div className='flex flex-wrap gap-4'>
-          {[...Array(15).keys()].map(index => (
-            <Card key={index}/>
-          ))}
+          <Card/>
+          <Card/>
           <button className='mt-8 py-2 bg-white px-8 mx-auto block'>Показать ещё</button>
         </div>
       </div>
@@ -144,9 +118,7 @@ const Index = () => {
     <div className='mt-8'>
       <h2 className='text-2xl md:text-3xl font-bold'>Реконмендуемые продукты</h2>
       <div className='flex flex-wrap gap-5 mt-8'>
-      {[...Array(4).keys()].map(index => (
-            <Card key={index}/>
-          ))}
+      <Card/>
       </div>
     </div>
   </div>
