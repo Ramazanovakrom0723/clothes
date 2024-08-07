@@ -1,89 +1,27 @@
-// "use client";
-
-// import React from "react";
-// // import { useEffect } from "react";
-// import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
-// import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-// import Kachs from "@/public/kach.png";
-// import Image from "next/image";
-// import Link from "next/link";
-// import { useState, useEffect } from "react";
-// import ProductService, { getProduct } from "@/service/auth.product";
-
-// const links = [{ path: "/single" }];
-
-// const Index = () => {
-//   const [product, setProduct] = useState([]);
-//   const [currentImage, setCurrentImage] = useState(0);
-
-//   const getData = async () => {
-//     const res = await getSingleProduct();
-//     if (res && res.data) {
-//       setProduct(res.data);
-//     }
-//   };
-
-//   useEffect(() => {
-//     getProduct();
-//   }, []);
-
-//   return (
-//     <div className="flex">
-//       <div className="pl-[20px] pt-[25px] pr-[15px] bg-white ">
-//         <div className="flex justify-end">
-//           <button>
-//             <FavoriteBorderIcon />
-//           </button>
-//         </div>
-// <button>
-//   {links.map((item, index) => (
-//     <Link href={item.path} key={index} className="text-sm md:text-base">
-//       {item.title}
-//       <Image
-//         src={
-//           Array.isArray(product.image_url) && product.image_url[0]
-//             ? product.image_url[0]
-//             : {Kachs}
-//         }
-//         alt="Kach"
-//         className="w-[242px] h-[194px]"
-//       />
-//     </Link>
-//   ))}
-// </button>
-//         <p className="text-[20px]">Бутса Nike Mercurial</p>
-//         <p className="text-[20px]">Superfly 8 FG</p>
-//         <div className="py-[16px]">
-//           <b className="text-[20px] ">
-//             250 000<span>uzs</span>
-//           </b>
-//         </div>
-//         <button className="w-full py-[15px] bg-[#FBD029] text-[]">
-//           {" "}
-//           <LocalGroceryStoreIcon /> Корзина
-//         </button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Index;
-
 "use client";
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import Bag from "../../../public/ryukzak.png";
-import { getProductApi } from "../../../service/auth.product";
+import { getProductApi } from "../../../service/auth.product"; 
+import postLike from "../../../service/like.service";
 import Link from "next/link";
 import Cookies from "js-cookie";
+import { Button } from "@mui/material";
+import { notification } from "antd";
+import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
+import { toast } from 'react-toastify';
 
-// const links = [{ path: `/${product.product_id}` }];
+
+
+
+
+
 
 const Index = () => {
   const [data, setData] = useState([]);
-  const [loading] = useState(false);
 
   const getData = async () => {
     try {
@@ -104,33 +42,73 @@ const Index = () => {
     getData();
   }, []);
 
-  const handleLikeClick = (productId) => {
-    setData((prevData) =>
-      prevData.map((product) =>
-        product.id === productId
-          ? { ...product, liked: !product.liked }
-          : product
-      )
-    );
+
+  const handleBasket = async (id) => {
+    try {
+      const response = await Basket.basketPost({ productId: id, quantity: 1 });
+      if (response.data) {
+        toast.success("Product added to basket successfully");
+      } else {
+        console.error("Failed to add product to basket:", response);
+        toast.error("Failed to add product to basket");
+      }
+    } catch (error) {
+      console.error("Error adding product to basket:", error);
+      toast.error("Error adding product to basket");
+    }
   };
+
+  const handleLikeClick = async (id) => {
+
+    try{
+      const res = await postLike(id)
+      if(res.data === true){
+        notification.success({
+          message: "Added from wishlist",
+          description: "Product has been removed from your wishlist.",
+      });
+      }else if(res.data === false){
+        notification.error({
+          message: "Removed from wishlist",
+          description: "Product has been removed from your wishlist.",
+      });
+      }
+    }catch(error){
+      console.log(error.message)
+    }
+};
 
   return (
     <div className="mb-[18px] flex flex-wrap justify-between gap-8 ">
       {data.map((product) => (
         <div
-          key={product.id}
+          key={product.product_id}
           className="w-[270px] bg-white rounded-t-md relative pt-4 mb-4"
         >
-          <FavoriteBorderIcon
-            className={`absolute top-3 right-3 cursor-pointer ${
-              product.liked ? "text-red-500" : "text-gray-500"
-            }`}
-            onClick={() => handleLikeClick(product.id)}
-          />
+          <Button
+            onClick={(e) => {
+              e.stopPropagation();
+              handleLikeClick(product.product_id);
+            }}
+            className="absolute top-2 right-2 p-1"
+            style={{
+              minWidth: "unset",
+              padding: "0",
+              color: product.liked ? "red" : "white",
+              borderRadius: "50%",
+              backgroundColor: "rgba(255, 255, 255, 0.7)",
+            }}
+          >
+            {product.liked ? (
+              <FavoriteIcon style={{ color: "red", fontSize: 24 }} />
+            ) : (
+              <FavoriteBorderIcon style={{ color: "black", fontSize: 24 }} />
+            )}
+          </Button>
           <div className="flex justify-center">
             <div>
               <div className="relative w-[200px] h-[170px]">
-                <Link onClick={() =>
+              <Link onClick={() =>
                       Cookies.set("product_id", product.product_id)
                     }
                     href={`/${product.product_id}`}>
@@ -149,18 +127,21 @@ const Index = () => {
               {product.product_name}
             </p>
             <p className="text-[30px] mb-[20px] text-[#FF1313] font-sans font-bold mt-[5px]">
-              {product.cost}{" "}
-              <span className="text-[18px] font-medium">uzs</span>
+              {product.cost} <span className="text-[18px] font-medium">uzs</span>
             </p>
           </div>
-          <button className="korzinka flex w-[270px] p-4 rounded-b-md bg-[#FBD029] items-center justify-center font-normal hover:bg-[#dcbb4e]">
-            Корзина
-          </button>
+          <button
+                      onClick={() => handleBasket(product.product_id)}
+                      className="mt-4 w-full bg-yellow-500 text-white py-2 rounded-lg flex items-center justify-center transition-colors hover:bg-yellow-600"
+                    >
+                      <LocalGroceryStoreIcon className="mr-2" /> Корзина
+                    </button>
         </div>
       ))}
-      {loading && <div className="flex justify-center mt-4">Loading...</div>}
     </div>
   );
 };
 
 export default Index;
+
+
