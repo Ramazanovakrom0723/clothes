@@ -45,14 +45,11 @@ const Index = () => {
         </div>
       </div>
       <div>
-        <div className="px-4 md:px-[150px] flex flex-col pt-[70px] pb-[76px]">
+        <div className="px-4 md:px-[140px] flex flex-col pt-[70px] pb-[76px]">
           <div className="flex justify-between">
             <h2 className="text-[32px] font-medium pb-[42px]">Акция</h2>
           </div>
           <div className="flex flex-wrap gap-[20px]">
-            <Card />
-            <Card />
-            <Card />
             <Card />
           </div>
         </div>

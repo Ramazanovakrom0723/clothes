@@ -1,4 +1,3 @@
-// pages/products/[id].js
 "use client";
 
 import { useEffect, useState } from "react";

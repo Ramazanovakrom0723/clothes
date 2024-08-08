@@ -1,158 +1,3 @@
-// 'use client'
-
-// import React, { useState } from 'react';
-// import Box from '@mui/material/Box';
-// import Modal from '@mui/material/Modal';
-// import { Visibility, VisibilityOff, Email, Lock } from '@mui/icons-material';
-// import Typography from '@mui/material/Typography';
-// import { ErrorMessage, Field, Form, Formik } from 'formik';
-// import * as Yup from 'yup'; // Import Yup for validation
-// import { Button, IconButton, InputAdornment, TextField } from '@mui/material';
-// import { login } from '../../service/signIn';
-
-// const style = {
-//   position: 'absolute',
-//   top: '50%',
-//   left: '50%',
-//   transform: 'translate(-50%, -50%)',
-//   width: '90%',
-//   maxWidth: 400,
-//   bgcolor: 'background.paper',
-//   border: '1px solid #000',
-//   boxShadow: 24,
-//   p: 4,
-//   borderRadius: 2,
-// };
-
-// // Validation schema
-// const SignInValidationSchema = Yup.object().shape({
-//   email: Yup.string()
-//     .email('Invalid email address')
-//     .required('Email is required'),
-//   password: Yup.string()
-//     .min(6, 'Password must be at least 6 characters')
-//     .required('Password is required'),
-// });
-
-// const KeepMountedModal = ({ open, handleClose }) => {
-//   const [showPassword, setShowPassword] = useState(false);
-
-//   const handleSubmit = async (values, { setSubmitting, setErrors }) => {
-//     try {
-//       const response = await login(values);
-//       if (response.status === 200) {
-//         // Handle success (e.g., close modal, redirect)
-//       }
-//     } catch (error) {
-//       // Handle error (e.g., show error message)
-//       setErrors({ general: 'An error occurred. Please try again.' });
-//     } finally {
-//       setSubmitting(false);
-//     }
-//   };
-
-//   return (
-//     <Modal
-//       keepMounted
-//       open={open}
-//       onClose={handleClose}
-//       aria-labelledby="keep-mounted-modal-title"
-//       aria-describedby="keep-mounted-modal-description"
-//     >
-//       <Box sx={style}>
-//         <Typography id="keep-mounted-modal-title" className='text-[#000]' variant="h4" component="h2" sx={{ mb: 2 }}>
-//           Вход в аккаунт
-//         </Typography>
-//         <Typography id="keep-mounted-modal-description" className='text-[#000]' sx={{ mb: 3 }}>
-//           Если Вы не зарегистрированы, нажмите кнопку <span className='text-[#FBD029] cursor-pointer'>"Регистрация"</span>
-//         </Typography>
-//         <Formik
-//           initialValues={{
-//             email: 'xasannosirov094@gmail.com',
-//             password: 'Sehtols@01',
-//           }}
-//           validationSchema={SignInValidationSchema}
-//           onSubmit={handleSubmit}
-//         >
-//           {({ isSubmitting }) => (
-//             <Form className='flex flex-col gap-4'>
-//               <Field
-//                 as={TextField}
-//                 fullWidth
-//                 label="Email"
-//                 variant="outlined"
-//                 type="email"
-//                 name="email"
-//                 InputProps={{
-//                   startAdornment: (
-//                     <InputAdornment position="start">
-//                       <Email />
-//                     </InputAdornment>
-//                   ),
-//                 }}
-//                 sx={{ mb: 2 }}
-//               />
-//               <ErrorMessage name="email" component="div" className="text-red-600" />
-//               <Field
-//                 as={TextField}
-//                 fullWidth
-//                 type={showPassword ? "text" : "password"}
-//                 label="Password"
-//                 variant="outlined"
-//                 name="password"
-//                 InputProps={{
-//                   startAdornment: (
-//                     <InputAdornment position="start">
-//                       <Lock />
-//                     </InputAdornment>
-//                   ),
-//                   endAdornment: (
-//                     <InputAdornment position="end">
-//                       <IconButton
-//                         onClick={() => setShowPassword(!showPassword)}
-//                         edge="end"
-//                       >
-//                         {showPassword ? <VisibilityOff /> : <Visibility />}
-//                       </IconButton>
-//                     </InputAdornment>
-//                   ),
-//                 }}
-//                 sx={{ mb: 2 }}
-//               />
-//               <ErrorMessage name="password" component="div" className="text-red-600" />
-//               <Button
-//                 type="submit"
-//                 variant="contained"
-//                 disabled={isSubmitting}
-//                 sx={{
-//                   backgroundColor: '#FBD029',
-//                   color: 'black',
-//                   '&:hover': {
-//                     backgroundColor: '#FBD029',
-//                   },
-//                   height: '40px',
-//                   borderRadius: '5px',
-//                   fontSize: '0.875rem',
-//                 }}
-//               >
-//                 Войти
-//               </Button>
-//               <div className='flex justify-center sm:justify-start mt-2'>
-//                 <p className="cursor-pointer text-[#917BFF]">Забыли пароль!</p>
-//               </div>
-//             </Form>
-//           )}
-//         </Formik>
-//       </Box>
-//     </Modal>
-//   );
-// }
-
-// export default KeepMountedModal;
-
-
-
-
 "use client";
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 
@@ -220,12 +65,10 @@ const Index = () => {
   return (
     <>
       <button
-        className="w-[46px] h-[46px] bg-[#F2F2F2] hover:bg-yellow-300 rounded-sm flex items-center justify-center"
+        className="w-[50px] h-[50px] bg-[#F2F2F2]  rounded-sm flex items-center justify-center"
         onClick={showModal}
       >
-        <PersonOutlineIcon/>
-        
-        {/* <Image src={User} alt="image" /> */}
+        <PersonOutlineIcon className='text-black text-[30px]' />
       </button>
       <Modal
         open={isModalOpen}
@@ -234,7 +77,7 @@ const Index = () => {
         footer={[
           <button
             key="ok"
-            className="custom-ok-button flex justify-start ml-7 px-14 py-2 font-semibold bg-yellow-300 hover:bg-yellow-500 transition-all border rounded-md"
+            className="px-14 py-2 font-bold bg-green-400 hover:bg-green-600  rounded-md"
             onClick={handleOk}
           >
             Войти
@@ -250,9 +93,6 @@ const Index = () => {
           }}
         >
           <h1 className="text-[24px] font-medium">Вход в аккаунт</h1>
-          <p className="w-[270px] text-[12px]">
-            Если Вы не зарегистрированы, нажмите кнопку
-          </p>
           <Input
             placeholder="Email"
             name="email"

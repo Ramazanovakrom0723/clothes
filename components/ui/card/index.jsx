@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -5,20 +6,16 @@ import Image from "next/image";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import Bag from "../../../public/ryukzak.png";
-import { getProductApi } from "../../../service/auth.product"; 
+import { FaShoppingCart } from "react-icons/fa";
+import { getProductApi } from "../../../service/auth.product";
 import postLike from "../../../service/like.service";
 import Link from "next/link";
+import Basket from "../../../service/auth.korzinka";
 import Cookies from "js-cookie";
 import { Button } from "@mui/material";
 import { notification } from "antd";
-import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
-import { toast } from 'react-toastify';
-
-
-
-
-
-
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Index = () => {
   const [data, setData] = useState([]);
@@ -42,11 +39,10 @@ const Index = () => {
     getData();
   }, []);
 
-
   const handleBasket = async (id) => {
     try {
       const response = await Basket.basketPost({ productId: id, quantity: 1 });
-      if (response.data) {
+      if (response.data === true) {
         toast.success("Product added to basket successfully");
       } else {
         console.error("Failed to add product to basket:", response);
@@ -59,27 +55,26 @@ const Index = () => {
   };
 
   const handleLikeClick = async (id) => {
-
-    try{
-      const res = await postLike(id)
-      if(res.data === true){
+    try {
+      const res = await postLike(id);
+      if (res.data === true) {
         notification.success({
-          message: "Added from wishlist",
-          description: "Product has been removed from your wishlist.",
-      });
-      }else if(res.data === false){
+          message: "Added to wishlist",
+          description: "Product has been added to your wishlist.",
+        });
+      } else if (res.data === false) {
         notification.error({
           message: "Removed from wishlist",
           description: "Product has been removed from your wishlist.",
-      });
+        });
       }
-    }catch(error){
-      console.log(error.message)
+    } catch (error) {
+      console.log(error.message);
     }
-};
+  };
 
   return (
-    <div className="mb-[18px] flex flex-wrap justify-between gap-8 ">
+    <div className="mb-[18px] flex flex-wrap justify-between gap-8">
       {data.map((product) => (
         <div
           key={product.product_id}
@@ -108,10 +103,10 @@ const Index = () => {
           <div className="flex justify-center">
             <div>
               <div className="relative w-[200px] h-[170px]">
-              <Link onClick={() =>
-                      Cookies.set("product_id", product.product_id)
-                    }
-                    href={`/${product.product_id}`}>
+                <Link
+                  onClick={() => Cookies.set("product_id", product.product_id)}
+                  href={`/${product.product_id}`}
+                >
                   <Image
                     src={product.image_url[1] || Bag}
                     alt="Product Image"
@@ -127,21 +122,22 @@ const Index = () => {
               {product.product_name}
             </p>
             <p className="text-[30px] mb-[20px] text-[#FF1313] font-sans font-bold mt-[5px]">
-              {product.cost} <span className="text-[18px] font-medium">uzs</span>
+              {product.cost}{" "}
+              <span className="text-[18px] font-medium">uzs</span>
             </p>
           </div>
           <button
-                      onClick={() => handleBasket(product.product_id)}
-                      className="mt-4 w-full bg-yellow-500 text-white py-2 rounded-lg flex items-center justify-center transition-colors hover:bg-yellow-600"
-                    >
-                      <LocalGroceryStoreIcon className="mr-2" /> Корзина
-                    </button>
+            onClick={() => handleBasket(product.product_id)}
+            className="mt-4 w-full bg-yellow-500 text-white py-2 rounded-lg flex items-center justify-center transition-colors hover:bg-yellow-600"
+          >
+            <FaShoppingCart className="mr-2" /> Корзина
+          </button>
         </div>
       ))}
+      <ToastContainer />
     </div>
   );
 };
 
 export default Index;
-
 

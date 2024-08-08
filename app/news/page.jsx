@@ -30,7 +30,7 @@ const Index = () => {
     <p className='text-sm md:text-base'>Полезные информации</p>
   </div>
 
-  <div className='px-4 md:px-[150px]'>
+  <div className='px-4 md:px-[140px]'>
     <h2 className='pb-[31px] text-[24px] md:text-[32px] font-bold'>Полезные информации</h2>
     <div className='flex flex-col gap-[24px]'>
       
@@ -51,14 +51,11 @@ const Index = () => {
 
       <button className='pokazat mt-[24px]'>Показать ещё</button>
 
-      <div className='px-4  flex flex-col pt-[70px] pb-[76px]'>
+      <div className='  flex flex-col pt-[70px] pb-[76px]'>
         <div className='flex flex-wrap justify-between'>
           <h2 className='text-[24px] md:text-[32px] font-medium pb-[42px]'>Акция</h2>
         </div>
         <div className='flex flex-wrap gap-[10px]'>
-          <Card/>
-          <Card/>
-          <Card/>
           <Card/>
         </div>
       </div>
